@@ -12,7 +12,6 @@ load_data <- function(path = "household_power_consumption.txt") {
   rm(raw_data)
   
   data$datetime <- as.POSIXct(paste(data$Date, data$Time), format = "%d/%m/%Y %H:%M:%S", tz = "GMT")
-  data$weekday <- weekdays(data$datetime, abbreviate = T)
   cat("Done in", Sys.time() - stime, "seconds\n", sep = " ")
   
   return(data)
